@@ -108,7 +108,7 @@ export default function InstallPage() {
   }
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative">
-     
+      {/* Dynamic Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
           className="absolute w-96 h-96 bg-cyan-400/8 rounded-full blur-3xl transition-all duration-1000 ease-out"
@@ -122,10 +122,10 @@ export default function InstallPage() {
         <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple-400/6 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-pink-400/6 rounded-full blur-3xl animate-pulse delay-2000"></div>
         
-        
+        {/* Cyber Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:60px_60px] opacity-30"></div>
         
-       
+        {/* Floating Elements */}
         <div className="absolute top-20 left-10 w-2 h-2 bg-cyan-400 rounded-full animate-ping opacity-20"></div>
         <div className="absolute top-40 right-20 w-1 h-1 bg-blue-400 rounded-full animate-pulse opacity-30"></div>
         <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-purple-400 rounded-full animate-ping opacity-25 delay-1000"></div>
@@ -134,7 +134,7 @@ export default function InstallPage() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="max-w-7xl mx-auto">
           
-        
+          {/* Enhanced Header Section */}
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
             <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-cyan-400 to-cyan-600 rounded-full mb-6 sm:mb-8 shadow-lg shadow-cyan-500/30 relative group">
               <Shield className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-white animate-pulse" />
@@ -153,7 +153,7 @@ export default function InstallPage() {
               Deploy enterprise-grade cybersecurity protection with advanced AI-powered threat detection and real-time malware prevention
             </p>
 
-          
+            {/* Status Indicators */}
             <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mt-6 sm:mt-8 px-4">
               <div className="flex items-center gap-2 bg-zinc-800/30 backdrop-blur-sm rounded-full px-3 sm:px-4 py-1.5 sm:py-2 border border-cyan-400/20">
                 <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-400" />
@@ -170,10 +170,10 @@ export default function InstallPage() {
             </div>
           </div>
 
-     
+          {/* Main Installation Interface */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16">
             
-            
+            {/* Installation Steps */}
             <div className="space-y-6 lg:space-y-8">
               <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-cyan-400 to-cyan-600 rounded-full flex items-center justify-center shadow-lg shadow-cyan-500/30">
@@ -252,13 +252,13 @@ export default function InstallPage() {
               </div>
             </div>
 
-            
+            {/* Download & Features Section */}
             <div className="space-y-6 sm:space-y-8">
               
-            
+              {/* Download Card */}
               <div className="bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 backdrop-blur-lg rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-2xl border border-cyan-400/20 relative overflow-hidden group">
                 
-               
+                {/* Animated Background Effects */}
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/5 via-blue-400/10 to-purple-400/5 animate-pulse"></div>
                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-400/10 rounded-full blur-2xl transform translate-x-16 -translate-y-16 group-hover:scale-150 transition-transform duration-1000"></div>
                 
@@ -292,7 +292,7 @@ export default function InstallPage() {
                 </div>
               </div>
 
-              
+              {/* Features Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {features.map((feature, index) => (
                   <div 
@@ -320,12 +320,12 @@ export default function InstallPage() {
                 ))}
               </div>
 
-             
+              {/* Trust Indicators */}
               <div className="bg-zinc-800/20 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 border border-zinc-700/30">
                 <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
                   <Users className="w-5 h-5 sm:w-6 sm:h-6 text-cyan-400" />
                   <span className="text-base sm:text-lg text-gray-300">
-                    Trusted by <span className="text-cyan-400 font-bold">2</span> users worldwide
+                    Trusted by <span className="text-cyan-400 font-bold">2+</span> users worldwide
                   </span>
                 </div>
                 
@@ -341,7 +341,7 @@ export default function InstallPage() {
             </div>
           </div>
 
-         
+          {/* Enhanced Security Notice */}
           <div className="mt-8 sm:mt-12 lg:mt-16 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 border border-cyan-500/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 backdrop-blur-sm relative overflow-hidden">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.1)_0%,transparent_70%)]"></div>
             

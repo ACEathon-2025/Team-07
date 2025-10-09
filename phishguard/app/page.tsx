@@ -70,7 +70,7 @@ export default function HomePage() {
   ]
 
   const stats = [
-    { number: "50+", label: "URLs Scanned", icon: Search },
+    { number: "2+", label: "URLs Scanned", icon: Search },
     { number: "231+", label: "Threats Blocked", icon: Shield },
     { number: "99.9%", label: "Accuracy Rate", icon: Target },
     { number: "24/7", label: "Protection", icon: Clock }
@@ -81,7 +81,7 @@ export default function HomePage() {
   }
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
-     
+      {/* Dynamic Animated Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div 
           className="absolute w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl transition-all duration-1000 ease-out"
@@ -95,16 +95,16 @@ export default function HomePage() {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-400/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-3/4 left-3/4 w-64 h-64 bg-pink-400/8 rounded-full blur-3xl animate-pulse delay-2000"></div>
         
-        
+        {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20"></div>
       </div>
 
       <main className="relative z-10">
-     
+        {/* Hero Section */}
         <section className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-12 xl:py-20">
           <div className="max-w-7xl mx-auto text-center space-y-6 sm:space-y-8 lg:space-y-12">
             
-            
+            {/* Status Badge */}
             <div className="flex justify-center animate-fade-in">
               <Badge 
                 variant="outline" 
@@ -116,7 +116,7 @@ export default function HomePage() {
               </Badge>
             </div>
 
-          
+            {/* Main Heading - Enhanced Mobile Responsive */}
             <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-extrabold tracking-tight leading-tight px-2">
               <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-1 xs:mb-2 sm:mb-4">
                 Advanced Phishing
@@ -126,7 +126,7 @@ export default function HomePage() {
               </span>
             </h1>
 
-            
+            {/* Dynamic Feature Display - Mobile Optimized */}
             <div className="h-10 xs:h-12 sm:h-16 flex items-center justify-center px-2 sm:px-4">
               <div className="flex items-center space-x-1 xs:space-x-2 sm:space-x-3 bg-zinc-800/50 backdrop-blur-sm rounded-full px-3 xs:px-4 sm:px-6 py-2 xs:py-2.5 sm:py-3 border border-zinc-700/50 transition-all duration-500 hover:border-cyan-400/50 hover:bg-zinc-800/70">
                 {React.createElement(features[currentFeature].icon, {
@@ -138,14 +138,14 @@ export default function HomePage() {
               </div>
             </div>
 
-           
+            {/* Enhanced Description - Mobile Optimized */}
             <p className="text-sm xs:text-base sm:text-lg lg:text-xl xl:text-2xl text-zinc-300 leading-relaxed max-w-[280px] xs:max-w-sm sm:max-w-2xl lg:max-w-4xl xl:max-w-5xl mx-auto px-2 sm:px-4">
               PhishGuard leverages <span className="text-cyan-400 font-semibold inline-flex items-center"><Brain className="w-3 h-3 xs:w-4 xs:h-4 mx-1" />advanced AI</span> and 
               <span className="text-blue-400 font-semibold inline-flex items-center"><Cpu className="w-3 h-3 xs:w-4 xs:h-4 mx-1" />machine learning</span> to detect phishing, 
               malware, and scam threats — <span className="text-purple-400 font-semibold inline-flex items-center"><Timer className="w-3 h-3 xs:w-4 xs:h-4 mx-1" />in real-time</span>.
             </p>
 
-          
+            {/* CTA Buttons - Enhanced Mobile Responsive */}
             <div className="flex flex-col gap-3 xs:gap-4 sm:flex-row sm:justify-center sm:gap-4 lg:gap-6 mt-6 xs:mt-8 sm:mt-12 px-2 xs:px-4 w-full max-w-sm xs:max-w-md sm:max-w-2xl mx-auto">
               <Link
                 href="/install"
@@ -165,7 +165,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            
+            {/* Enhanced Stats Grid - Mobile Optimized */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 xs:gap-3 sm:gap-6 lg:gap-8 mt-8 xs:mt-12 sm:mt-16 lg:mt-20 px-2 xs:px-4 max-w-6xl mx-auto">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group cursor-pointer">
@@ -186,12 +186,12 @@ export default function HomePage() {
               ))}
             </div>
 
-            
+            {/* Enhanced Social Proof - Mobile Optimized */}
             <div className="flex flex-col xs:flex-row items-center justify-center gap-2 xs:gap-3 sm:gap-6 lg:gap-8 mt-8 xs:mt-12 sm:mt-16 text-zinc-400 px-2 xs:px-4">
               <div className="flex items-center gap-1 xs:gap-2 sm:gap-3 bg-zinc-800/30 backdrop-blur-sm rounded-full px-3 xs:px-4 sm:px-6 py-1.5 xs:py-2 sm:py-3 border border-zinc-700/50 hover:border-cyan-400/30 transition-all duration-300">
                 <Users className="w-3 h-3 xs:w-4 xs:h-4 sm:w-5 sm:h-5 text-cyan-400" />
                 <span className="text-xs xs:text-xs sm:text-sm lg:text-base">
-                  Trusted by <span className="text-cyan-400 font-semibold">50+</span> users
+                  Trusted by <span className="text-cyan-400 font-semibold">2+</span> users
                 </span>
                 <Heart className="w-3 h-3 xs:w-4 xs:h-4 text-pink-400 animate-pulse" />
               </div>
@@ -206,7 +206,7 @@ export default function HomePage() {
           </div>
         </section>
 
-      
+       
         <section className="py-8 xs:py-12 sm:py-16 lg:py-20 xl:py-24 px-2 xs:px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-8 xs:mb-12 sm:mb-16 lg:mb-20">
@@ -243,6 +243,7 @@ export default function HomePage() {
                 </div>
               </div>
 
+              
               <div className="group bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 backdrop-blur-sm p-3 xs:p-4 sm:p-6 lg:p-8 rounded-lg xs:rounded-xl sm:rounded-2xl lg:rounded-3xl border border-zinc-700/50 hover:border-red-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-400/10 transform hover:-translate-y-2 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-red-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -263,7 +264,7 @@ export default function HomePage() {
                 </div>
               </div>
 
-
+              
               <div className="group bg-gradient-to-br from-zinc-800/50 to-zinc-900/50 backdrop-blur-sm p-3 xs:p-4 sm:p-6 lg:p-8 rounded-lg xs:rounded-xl sm:rounded-2xl lg:rounded-3xl border border-zinc-700/50 hover:border-purple-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-400/10 transform hover:-translate-y-2 relative overflow-hidden sm:col-span-2 lg:col-span-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative z-10">
@@ -287,9 +288,8 @@ export default function HomePage() {
           </div>
         </section>
 
-     
+        
 
- 
         <section className="py-12 sm:py-16 lg:py-20 xl:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-900/20 via-blue-900/20 to-purple-900/20 backdrop-blur-sm border-y border-zinc-700/50 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,182,212,0.1)_0%,transparent_70%)]"></div>
           <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -323,7 +323,7 @@ export default function HomePage() {
               </Link>
             </div>
             
-        
+            
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-8 sm:mt-12 lg:mt-16 max-w-4xl mx-auto">
               <div className="flex items-center justify-center space-x-2 sm:space-x-3 bg-zinc-800/30 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-zinc-700/50 hover:border-green-400/30 transition-all duration-300">
                 <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
