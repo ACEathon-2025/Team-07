@@ -17,6 +17,7 @@ import {
   ChevronDown,
   Sparkles,
   Link2,
+  QrCode,
   FileText,
   Mail,
   Download,
@@ -31,13 +32,13 @@ import {
   SheetHeader,
   SheetTitle,
 } from '@/components/ui/sheet'
-
+import { toast } from 'sonner'
 
 export default function Navbar() {
   const [user, setUser] = useState<FirebaseUser | null>(null)
   const [isLoading, setIsLoading] = useState(false)
   const [showUserMenu, setShowUserMenu] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) 
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false) // 🆕 Add mobile menu state
   const pathname = usePathname()
 
   useEffect(() => {
@@ -65,7 +66,7 @@ export default function Navbar() {
     try {
       await signOut(auth)
       toast.success('Successfully signed out!')
-      setIsMobileMenuOpen(false) 
+      setIsMobileMenuOpen(false) // 🆕 Close mobile menu on logout
     } catch (error) {
       console.error('Logout failed:', error)
       toast.error('Logout failed. Please try again.')
@@ -78,7 +79,7 @@ export default function Navbar() {
     return pathname === path
   }
 
- 
+  // 🆕 Function to close mobile menu
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
   }
@@ -94,14 +95,14 @@ export default function Navbar() {
       }
     `
 
-   
+    // 🆕 Create a wrapper component for mobile links that closes the menu
     const MobileLink = ({ href, children, className }: { href: string, children: React.ReactNode, className: string }) => {
       if (isMobile) {
         return (
           <Link 
             href={href} 
             className={className}
-            onClick={closeMobileMenu} 
+            onClick={closeMobileMenu} // 🆕 Close menu on click
           >
             {children}
           </Link>
@@ -135,6 +136,10 @@ export default function Navbar() {
               <Mail className={`w-4 h-4 transition-transform duration-200 ${isActiveLink('/email') ? 'text-cyan-400' : 'group-hover:scale-105'}`} />
               <span>Email Scanner</span>
             </MobileLink>
+            <MobileLink href="/qr-scan" className={linkClass('/qr-scan')}>
+              <QrCode className={`w-4 h-4 transition-transform duration-200 ${isActiveLink('/qr-scan') ? 'text-cyan-400' : 'group-hover:scale-105'}`} />
+              <span>QR Scanner</span>
+            </MobileLink>
             <MobileLink href="/install" className={linkClass('/install')}>
               <Download className={`w-4 h-4 transition-transform duration-200 ${isActiveLink('/install') ? 'text-cyan-400' : 'group-hover:scale-105'}`} />
               <span>Install</span>
@@ -164,13 +169,13 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 backdrop-blur-xl border-b border-cyan-500/20 shadow-2xl">
-     
+      {/* Top accent line */}
       <div className="h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
       
       <div className="max-w-8xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
 
-         
+          {/* Logo Section - New Design */}
           <div className="flex items-center space-x-8">
             <Link
               href="/"
@@ -191,19 +196,19 @@ export default function Navbar() {
               </div>
             </Link>
             
-         
+            {/* Desktop Navigation - Inline */}
             <div className="hidden lg:flex items-center space-x-1">
               <NavLinks />
             </div>
           </div>
 
-         
+          {/* Right Section - User & Mobile Menu */}
           <div className="flex items-center space-x-4">
-          
+            {/* User Section - Desktop */}
             <div className="hidden md:flex items-center space-x-4">
               {user ? (
                 <div className="flex items-center space-x-3">
-                 
+                  {/* User Profile Menu */}
                   <div className="relative">
                     <button
                       onClick={() => setShowUserMenu(!showUserMenu)}
@@ -227,7 +232,7 @@ export default function Navbar() {
                       <ChevronDown className={`w-4 h-4 text-slate-400 transition-all duration-300 group-hover:text-cyan-400 ${showUserMenu ? 'rotate-180' : ''}`} />
                     </button>
 
-                   
+                    {/* Dropdown Menu */}
                     {showUserMenu && (
                       <div className="absolute right-0 mt-3 w-80 bg-slate-900/95 backdrop-blur-xl border border-cyan-500/20 rounded-3xl shadow-2xl py-3 z-50 animate-in slide-in-from-top-2 duration-200">
                         <div className="px-6 py-5 border-b border-slate-700/50">
@@ -305,7 +310,7 @@ export default function Navbar() {
               )}
             </div>
 
-            
+            {/* Mobile Menu Button */}
             <div className="md:hidden">
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}> {/* 🆕 Control open state */}
                 <SheetTrigger asChild>
@@ -336,7 +341,7 @@ export default function Navbar() {
                   </SheetHeader>
                   
                   <div className="flex-1 flex flex-col mt-4 space-y-6 pb-4 overflow-y-auto">
-                   
+                    {/* User Info - Mobile */}
                     {user && (
                       <div className="flex items-center space-x-3 p-4 bg-slate-800/40 rounded-2xl border border-slate-700/30 backdrop-blur-sm flex-shrink-0">
                         <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-cyan-400/50 relative bg-gradient-to-br from-cyan-500 to-blue-600 flex-shrink-0">
@@ -360,7 +365,7 @@ export default function Navbar() {
                       </div>
                     )}
 
-                  
+                    {/* Navigation Links - Mobile */}
                     <div className="space-y-3 flex-1">
                       <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider px-2">Navigation</h3>
                       <div className="space-y-1">
@@ -368,13 +373,13 @@ export default function Navbar() {
                       </div>
                     </div>
 
-                  
+                    {/* Account Actions - Mobile (Fixed at bottom) */}
                     <div className="border-t border-slate-700/50 pt-4 flex-shrink-0 space-y-3">
                       {!user ? (
                         <Button 
                           onClick={() => {
                             login()
-                            closeMobileMenu() 
+                            closeMobileMenu() // 🆕 Close menu after login attempt
                           }}
                           disabled={isLoading}
                           className="w-full bg-gradient-to-r from-cyan-600 via-blue-600 to-purple-600 hover:from-cyan-500 hover:via-blue-500 hover:to-purple-500 text-white py-3 rounded-xl font-semibold shadow-lg text-sm"
@@ -390,11 +395,11 @@ export default function Navbar() {
                         <div className="space-y-2">
                           <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider px-2">Account</h3>
                           
-                    
+                          {/* Settings Button */}
                           <button
                             onClick={() => {
                               window.location.href = '/settings'
-                              closeMobileMenu() 
+                              closeMobileMenu() // 🆕 Close menu when navigating to settings
                             }}
                             className="w-full flex items-center gap-3 p-3 text-slate-300 hover:text-white hover:bg-slate-800/60 rounded-xl border border-slate-700/50 hover:border-cyan-500/50 text-sm font-medium transition-all duration-200 group"
                           >
@@ -407,9 +412,9 @@ export default function Navbar() {
                             </div>
                           </button>
                           
-                         
+                          {/* Sign Out Button */}
                           <button
-                            onClick={logout} 
+                            onClick={logout} // 🆕 logout function already closes menu
                             disabled={isLoading}
                             className="w-full flex items-center gap-3 p-3 bg-red-600/20 hover:bg-red-600/30 text-red-300 hover:text-red-200 border border-red-500/30 hover:border-red-400/50 rounded-xl font-semibold text-sm transition-all duration-300 disabled:opacity-50 shadow-lg group"
                           >
